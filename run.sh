@@ -12,7 +12,9 @@ else
   cmd=docker
 fi
 
-NV_GPU="$GPU" ${cmd} run \
+# --name contrainer name, -v Bind mount a volume, -t Allocate a pseudo-TTY
+NV_GPU="$GPU" 
+${cmd} run \
     --name $name \
     --user $(id -u):$(id -g) \
     -v `pwd`:/pymarl \
