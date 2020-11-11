@@ -1,5 +1,7 @@
 ```diff
-- This is a BETA release
+- Please pay attention to the version of SC2 you are using for your experiments. 
+- Performance is *not* always comparable between versions. 
+- The results in SMAC (https://arxiv.org/abs/1902.04043) use SC2.4.6.2.69232 not SC2.4.10.
 ```
 
 # Python MARL framework
@@ -9,6 +11,7 @@ PyMARL is [WhiRL](http://whirl.cs.ox.ac.uk)'s framework for deep multi-agent rei
 - [**COMA**: Counterfactual Multi-Agent Policy Gradients](https://arxiv.org/abs/1705.08926)
 - [**VDN**: Value-Decomposition Networks For Cooperative Multi-Agent Learning](https://arxiv.org/abs/1706.05296) 
 - [**IQL**: Independent Q-Learning](https://arxiv.org/abs/1511.08779)
+- [**QTRAN**: QTRAN: Learning to Factorize with Transformation for Cooperative Multi-Agent Reinforcement Learning](https://arxiv.org/abs/1905.05408)
 
 PyMARL is written in PyTorch and uses [SMAC](https://github.com/oxwhirl/smac) as its environment.
 
@@ -32,7 +35,7 @@ The requirements.txt file can be used to install the necessary packages into a v
 ## Run an experiment 
 
 ```shell
-python3 src/main.py --config=qmix_smac --env-config=sc2 with env_args.map_name=2s3z
+python3 src/main.py --config=qmix --env-config=sc2 with env_args.map_name=2s3z
 ```
 
 The config files act as defaults for an algorithm or environment. 
@@ -43,10 +46,12 @@ They are all located in `src/config`.
 
 To run experiments using the Docker container:
 ```shell
-bash run.sh $GPU python3 src/main.py --config=qmix_smac --env-config=sc2 with env_args.map_name=2s3z
+bash run.sh $GPU python3 src/main.py --config=qmix --env-config=sc2 with env_args.map_name=2s3z
 ```
 
 All results will be stored in the `Results` folder.
+
+The previous config files used for the SMAC Beta have the suffix `_beta`.
 
 ## Saving and loading learnt models
 
